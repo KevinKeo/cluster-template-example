@@ -5,19 +5,31 @@ entries:
       catalog.cattle.io/namespace: fleet-default
       catalog.cattle.io/type: cluster-template
     apiVersion: v1
-    created: "2024-02-13T16:28:55.960369+01:00"
+    created: "2024-02-13T16:29:43.212824+01:00"
     description: Cluster template for rke2
     digest: dc4ebde1bcf24b9af47665b84e03e88f5480cebe2d90503771f3804e7ab21f8b
     name: cluster-template
     urls:
     - cluster-template-0.0.1.tgz
     version: 0.0.1
+  cluster-template-dbi:
+  - annotations:
+      catalog.cattle.io/namespace: fleet-default
+      catalog.cattle.io/type: cluster-template-dbi
+    apiVersion: v1
+    created: "2024-02-13T16:29:43.214288+01:00"
+    description: Cluster template for rke2
+    digest: 53ca36fef2da96766018aa74dfdd67521303d5ee8fb6ce99e802ca4b74fd1879
+    name: cluster-template-dbi
+    urls:
+    - cluster-template-dbi-0.0.1.tgz
+    version: 0.0.1
   cluster-template-dbiservice-rke2-ec2:
   - annotations:
       catalog.cattle.io/namespace: fleet-default
       catalog.cattle.io/type: cluster-template-dbiservice-rke2-ec2
     apiVersion: v1
-    created: "2024-02-13T16:28:55.960954+01:00"
+    created: "2024-02-13T16:29:43.214916+01:00"
     description: Cluster template for rke2
     digest: 1b054e5ca3482fa9638611f95ef3b19e2c28d1e6ca1582cf80c5b3ea873b1040
     name: cluster-template-dbiservice-rke2-ec2
@@ -29,7 +41,7 @@ entries:
       catalog.cattle.io/namespace: fleet-default
       catalog.cattle.io/type: cluster-template-dbiservices
     apiVersion: v1
-    created: "2024-02-13T16:28:55.961641+01:00"
+    created: "2024-02-13T16:29:43.215576+01:00"
     description: Cluster template for rke2
     digest: 66b181df92bee76f844de849b1fa5fbf899c064baca5e17e442fe7989116ebaa
     name: cluster-template-dbiservices
@@ -41,11 +53,11 @@ entries:
       catalog.cattle.io/namespace: fleet-default
       catalog.cattle.io/type: dbiservices-template-rke2-ec2
     apiVersion: v1
-    created: "2024-02-13T16:28:55.962296+01:00"
+    created: "2024-02-13T16:29:43.216232+01:00"
     description: Cluster template for rke2
     digest: 808dc15d8cc2e4a06e12fb084c0daee539f05ceade150fb629a89e195406f874
     name: dbiservices-template-rke2-ec2
     urls:
     - dbiservices-template-rke2-ec2-0.0.1.tgz
     version: 0.0.1
-generated: "2024-02-13T16:28:55.95961+01:00"
+generated: "2024-02-13T16:29:43.211965+01:00"
