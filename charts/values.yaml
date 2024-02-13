@@ -165,7 +165,7 @@ nodepools:
     volumeType: gp2
 
     # AWS VPC id
-    # vpcId: ""
+    vpcId: "vpc-07ee607b6d4d9f2d5"
 
     # Create an EBS optimized instance
     useEbsOptimizedInstance: false
