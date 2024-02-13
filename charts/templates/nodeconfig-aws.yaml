@@ -63,7 +63,7 @@ requestSpotInstance: {{ $nodepool.requestSpotInstance }}
 retries: {{ $nodepool.retries }}
 {{- end }}
 {{- if $nodepool.rootSize }}
-rootSize: {{ $nodepool.rootSize }}
+rootSize: {{ quote $nodepool.rootSize }}
 {{- end }}
 securityGroup:
 {{- if $nodepool.createSecurityGroup }}
@@ -78,7 +78,7 @@ securityGroupReadonly: {{ $nodepool.securityGroupReadonly }}
 sessionToken: {{ $nodepool.sessionToken }}
 {{- end }}
 {{- if $nodepool.spotPrice }}
-spotPrice: {{ $nodepool.spotPrice }}
+spotPrice: {{ quote $nodepool.spotPrice }}
 {{- end }}
 {{- if $nodepool.sshKeyContents }}
 sshKeyContents: {{ $nodepool.sshKeyContents }}
@@ -174,7 +174,7 @@ region: {{ $nodepool.region }}
 requestSpotInstance: {{ $nodepool.requestSpotInstance }}
 {{- end }}
 {{- if $nodepool.retries }}
-retries: {{ $nodepool.retries }}
+retries: {{ quote $nodepool.retries }}
 {{- end }}
 {{- if $nodepool.rootSize }}
 rootSize: {{ $nodepool.rootSize }}
