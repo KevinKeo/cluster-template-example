@@ -65,7 +65,7 @@ questions:
     group: "Monitoring"
 # EC2
 - variable: nodepools.0.instanceType
-  label: "Instance Type"
+  label: "ControlPlane Instance Type"
   default: t3a.medium
   description: "Instance type of controlplane"
   type: enum
@@ -77,7 +77,7 @@ questions:
   show_if: cloudprovider=amazonec2
   group: "Nodepools"
 - variable: nodepools.1.instanceType
-  label: "Instance Type"
+  label: "Workers Instance Type"
   default: t3a.medium
   description: "Instance type of workers"
   type: enum
