@@ -1,19 +1,17 @@
 cloudprovider: amazonec2
 
-cloudCredentialSecretName: amazonec2
+cloudCredentialSecretName: ''
 
 # Specify nodepool options. Can add multiple node groups, specify etcd, controlplane and worker roles.
 nodepools:
 - etcd: true
   controlplane: true
-  worker: true
+  worker: false
 
   # specify node labels
   labels: {}
-
   # specify node taints
   taints: {}
-
   # specify nodepool size
   quantity: 1
 
@@ -60,7 +58,7 @@ nodepools:
   # machineDeploymentAnnotations: {}
 
   # specify nodepool name
-  name: ec2-nodepool-1
+  name: ec2-controlplane
 
   # AWS machine image
   # ami: ""
@@ -87,7 +85,7 @@ nodepools:
   instanceType: t3a.medium
 
   # AWS region
-  region: us-west-2
+  region: eu-central-1
 
   # Whether to create `rancher-node` security group. If false, can provide with existing security group
   createSecurityGroup: true
@@ -104,7 +102,7 @@ nodepools:
   sshKeyContents: ""
 
   # AWS VPC subnet id
-  subnetId: ""
+  subnetId: "subnet-0791d41f2cbaca6ef"
 
   # Set this flag to enable CloudWatch monitoring
   monitoring: false
@@ -113,7 +111,7 @@ nodepools:
   # openPort: ["8080", "8443"]
 
   # Only use a private IP address
-  privateAddressOnly: false
+  privateAddressOnly: true
 
   # Set this flag to request spot instance
   requestSpotInstance: false
@@ -128,7 +126,7 @@ nodepools:
   rootSize: 16
 
   # AWS spot instance bid price (in dollar)
-  spotPrice: 0.5
+  # spotPrice: 0.5
 
   # Set the name of the ssh user
   sshUser: ubuntu
@@ -143,7 +141,7 @@ nodepools:
   useEbsOptimizedInstance: false
 
   # Force the usage of private IP address
-  usePrivateAddress: false
+  usePrivateAddress: true
 
   # File contents for userdata
   userdata: ""
