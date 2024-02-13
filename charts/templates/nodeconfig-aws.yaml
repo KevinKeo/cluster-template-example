@@ -60,7 +60,7 @@ region: {{ $nodepool.region }}
 requestSpotInstance: {{ $nodepool.requestSpotInstance }}
 {{- end }}
 {{- if $nodepool.retries }}
-retries: {{ $nodepool.retries }}
+retries: {{ quote $nodepool.retries }}
 {{- end }}
 {{- if $nodepool.rootSize }}
 rootSize: {{ quote $nodepool.rootSize }}
