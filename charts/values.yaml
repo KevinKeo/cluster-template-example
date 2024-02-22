@@ -65,10 +65,10 @@ nodepools:
     sshKeyContents: ""
 
     # AWS VPC id
-    vpcId: ""
+    vpcId: "vpc-07ee607b6d4d9f2d5"
 
     # AWS VPC subnet id
-    subnetId: ""
+    subnetId: "subnet-0791d41f2cbaca6ef"
 
     # Whether to create `rancher-node` security group. If false, can provide with existing security group
     createSecurityGroup: true
@@ -126,10 +126,10 @@ nodepools:
     sshKeyContents: ""
 
     # AWS VPC id
-    vpcId: ""
+    vpcId: "vpc-07ee607b6d4d9f2d5"
 
     # AWS VPC subnet id
-    subnetId: ""
+    subnetId: "subnet-0791d41f2cbaca6ef"
 
     # Whether to create `rancher-node` security group. If false, can provide with existing security group
     createSecurityGroup: true

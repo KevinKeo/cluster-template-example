@@ -193,7 +193,7 @@ securityGroupReadonly: {{ $nodepool.securityGroupReadonly }}
 sessionToken: {{ $nodepool.sessionToken }}
 {{- end }}
 {{- if $nodepool.spotPrice }}
-retries: {{ quote $nodepool.spotPrice }}
+spotPrice: {{ quote $nodepool.spotPrice }}
 {{- end }}
 {{- if $nodepool.sshKeyContents }}
 sshKeyContents: {{ $nodepool.sshKeyContents }}
