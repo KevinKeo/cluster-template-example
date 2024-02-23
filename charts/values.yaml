@@ -1,7 +1,7 @@
 # cluster specific values
 cluster:
   # specify cluster name
-  name: dbiservices-template-rke2-ec2
+  name: kke-
 
   # specify cluster labels
   labels: 
@@ -14,6 +14,16 @@ cloudprovider: amazonec2
 # enable monitoring
 monitoring:
   enabled: true
+
+
+# specify user principal ids to be assiged as cluster members
+clusterMembers:
+- principalName: "local://u-g9bq8"
+  roleTemplateName: "cluster-member"
+- principalName: "github_team://8426662"
+  roleTemplateName: "cluster-owner"
+- principalName: "local://u-g9bq8"
+  roleTemplateName: "rt-tz9xs"
 
 # general RKE options
 rke:
