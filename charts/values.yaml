@@ -19,9 +19,9 @@ monitoring:
 # specify user principal ids to be assiged as cluster members
 clusterMembers:
 - principalName: "local://u-g9bq8"
-  roleTemplateName: "cluster-member"
-- principalName: "github_team://8426662"
   roleTemplateName: "cluster-owner"
+- principalName: "github_team://8426662"
+  roleTemplateName: "cluster-member"
 - principalName: "local://u-g9bq8"
   roleTemplateName: "rt-tz9xs"
 
