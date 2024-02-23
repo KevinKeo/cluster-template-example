@@ -6,7 +6,7 @@ metadata:
 {{ toYaml .Values.cluster.labels | indent 4 }}
   {{- end }}
   annotations:
-    provisioning.cattle.io/management-cluster-name: c-m-{{ trunc 8 (sha256sum (printf "%s/%s" $root.Release.Namespace $root.Values.cluster.name)) }}
+    provisioning.cattle.io/management-cluster-name: c-m-{{ trunc 8 (sha256sum (printf "%s/%s" $.Release.Namespace $.Values.cluster.name)) }}
   {{- if .Values.cluster.annotations }}
 {{ toYaml .Values.cluster.annotations | indent 4 }}
   {{- end }}
