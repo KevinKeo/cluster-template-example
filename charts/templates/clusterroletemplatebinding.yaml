@@ -5,7 +5,7 @@ apiVersion: management.cattle.io/v3
 clusterName: c-m-{{ trunc 8 (sha256sum (printf "%s/%s" $root.Release.Namespace $root.Values.cluster.name)) }}
 kind: ClusterRoleTemplateBinding
 metadata:
-  name: ctrb-{{ trunc 8 (sha256sum (printf "%s/%s" $root.Release.Namespace $member.principalName )) }}
+  name: ctrb-{{ trunc 8 (sha256sum (printf "%s/%s/%s" $root.Release.Namespace $member.principalName $member.roleTemplateName )) }}
   namespace: c-m-{{ trunc 8 (sha256sum (printf "%s/%s" $root.Release.Namespace $root.Values.cluster.name)) }}
 roleTemplateName: {{ $member.roleTemplateName }}
 userPrincipalName: {{ $member.principalName }}
