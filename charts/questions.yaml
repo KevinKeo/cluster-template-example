@@ -6,6 +6,13 @@ questions:
   required: true
   type: string
   group: "General"
+- variable: cluster.url
+  default: https://xxxxx.xxx
+  description: "Specify the url of the cluster for neuvector"
+  label: "Rancher URL"
+  required: true
+  type: string
+  group: "General"
 - variable: cloudCredentialSecretName
   default:
   description: "CloudCredentialName for provisioning cluster"
@@ -43,26 +50,6 @@ questions:
     description: "Local auth access endpoint CACerts"
     type: multiline
     group: "Auth Access Endpoint"
-- variable: monitoring.enabled
-  default: false
-  label: "Enable monitoring"
-  description: "Enable monitoring"
-  type: boolean
-  group: "Monitoring"
-  show_subquestion_if: true
-  subquestions:
-  - variable: monitoring.version
-    default:
-    label: "Monitoring Version"
-    description: "Choose chart version of monitoring. If empty latest version will be installed"
-    type: string
-    group: "Monitoring"
-  - variable: monitoring.values
-    default:
-    label: "Monitoring Values"
-    description: "Custom monitoring chart values"
-    type: multiline
-    group: "Monitoring"
 # EC2
 - variable: nodepools.0.instanceType
   label: "ControlPlane Instance Type"

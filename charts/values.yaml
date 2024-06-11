@@ -13,15 +13,6 @@ cloudprovider: amazonec2
 
 cloudCredentialSecretName: ''
 
-# enable monitoring
-monitoring:
-  enabled: false
-  # specify which version to install, can be semver range. If version is empty or is semver range, it will pick up the latest version.
-  # version: ""
-  # specify cutsom values set
-  # values:
-  #   foo: bar
-
 # general RKE options
 rke:
   # enable local auth endpoint
@@ -132,7 +123,7 @@ nodepools:
     sshKeyContents: ""
 
     # AWS VPC subnet id
-    subnetId: "subnet-0791d41f2cbaca6ef"
+    subnetId: "subnet-0f2df917b178a5dbc"
 
     # Set this flag to enable CloudWatch monitoring
     monitoring: false
@@ -277,7 +268,7 @@ nodepools:
     sshKeyContents: ""
 
     # AWS VPC subnet id
-    subnetId: "subnet-0791d41f2cbaca6ef"
+    subnetId: "subnet-0f2df917b178a5dbc"
 
     # Set this flag to enable CloudWatch monitoring
     monitoring: false
