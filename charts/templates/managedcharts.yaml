@@ -3,7 +3,7 @@
 {{- if ($fetchedcluster.status| default nil).clusterName | default nil }}
   {{- range $index, $project := (lookup "management.cattle.io/v3" "Project"  $fetchedcluster.status.clusterName "").items }}
     {{- if hasKey $project.metadata.labels "authz.management.cattle.io/system-project" }}
-      {{- if eq .Values.labels.authz.management.cattle.io/system-project "true" }}
+      {{- if eq (index $project.metadata.labels "authz.management.cattle.io/system-project") "true" }}
         {{- $projectsystem := $project }} 
       {{- end }}
     {{- end }}
