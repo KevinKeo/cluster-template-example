@@ -3,8 +3,7 @@ targetsCluster:
     namespace: fleet-default
 
 rancherUrl: https://kke-lab.cloud
-cluster:
-  name: kke-test
+  
 neuvector:
   # specify cluster name
   version: 103.0.3+up2.7.6

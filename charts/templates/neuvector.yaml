@@ -25,7 +25,7 @@ spec:
         rkeWindowsPathPrefix: ''
         systemDefaultRegistry: ''
         systemProjectId: {{ $project.metadata.name }}
-        url: {{ $root.Values.cluster.url }}
+        url: {{ $root.Values.rancherUrl }}
   defaultNamespace: "cattle-neuvector-system"
   targets:
   - clusterName: {{ $targetcluster.name }}
