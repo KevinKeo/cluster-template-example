@@ -1,0 +1,38 @@
+{{- $root := . }}
+{{- range $index, $targetcluster := $root.Values.targetsCluster }}
+  {{- $fetchedcluster :=  (lookup "provisioning.cattle.io/v1" "Cluster" $targetcluster.namespace $targetcluster.name) }}
+  {{- if ($fetchedcluster.status| default nil).clusterName | default nil }}
+    {{- range $index, $project  := (lookup "management.cattle.io/v3" "Project"  $fetchedcluster.status.clusterName "").items }}
+      {{- if hasKey $project.metadata.labels "authz.management.cattle.io/system-project" }}
+        {{- if eq (index $project.metadata.labels "authz.management.cattle.io/system-project") "true" }}
+---
+apiVersion: management.cattle.io/v3
+kind: ManagedChart
+metadata:
+  name: neuvector-crd-{{ $targetcluster.name }}
+  namespace: {{ $targetcluster.namespace }}
+spec:
+  chart: "neuvector-crd"
+  repoName: "rancher-charts"
+  releaseName: "neuvector-crd"
+  version: {{ $root.Values.neuvector.version }}
+  values:
+    global:
+      cattle:
+        clusterId: {{ $fetchedcluster.status.clusterName }}
+        clusterName: {{ $targetcluster.name }}
+        rkePathPrefix: ''
+        rkeWindowsPathPrefix: ''
+        systemDefaultRegistry: ''
+        systemProjectId: {{ $project.metadata.name }}
+        url: {{ $root.Values.cluster.url }}
+  defaultNamespace: "cattle-neuvector-system"
+  targets:
+  - clusterName: {{ $targetcluster.name }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+  
+
