@@ -10,7 +10,7 @@ apiVersion: management.cattle.io/v3
 kind: ManagedChart
 metadata:
   name: neuvector-crd-{{ $targetcluster.name }}
-  namespace: {{ $targetcluster.namespace }}
+  namespace: {{ $targetcluster.namespace }}
 spec:
   chart: "neuvector-crd"
   repoName: "rancher-charts"
